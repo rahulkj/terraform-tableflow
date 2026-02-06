@@ -28,9 +28,13 @@ Terraform Databricks environment
     ```
 
     `databricks_host` - in azure, access the Azure Databricks resource that got created in the earlier step. Capture the url from your browser - https://adb-740XXXXXX.19.azuredatabricks.net/
+
     `databricks_token` - generate a token for yourself from the databricks UI. YOUR NAME > Settings > User > Developer > Access tokens > Manage > Generate new token
+
     `databricks_sp_application_id` - service principal app id. YOUR NAME > Settings > Workspace admin > Identity and access > Service principals > Manage > Add service principal
+
     `external_location_abfss_url` - output from the azure terraform `abfss_storage_location`
+    
     `access_connector_id` - output from the azure terraform `databricks_access_connector_id`
 
 - Finally run the terraform commands

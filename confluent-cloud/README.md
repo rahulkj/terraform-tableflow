@@ -31,6 +31,7 @@ Terraform Confluent Cloud
     ```
 
     `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
+    
     `<PREFIX>` - to your desired unique letters
 
 - Finally run the terraform commands
