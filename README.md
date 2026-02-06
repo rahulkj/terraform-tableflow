@@ -6,13 +6,17 @@ How to use this repo
 
 ## Clone the repo
 > git clone https://github.com/rahulkj/terraform-tableflow
+
 > cd terraform-tableflow
 
 ## Step 1: Terraform Confluent Cloud
+
 - Switch to `confluent-cloud` directory
     > cd confluent-cloud
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # Cloud API key with resource-management permissions
@@ -38,6 +42,7 @@ How to use this repo
 
     `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
     `<PREFIX>` - to your desired unique letters
+
 - Finally run the terraform commands
     ```
     terraform init
@@ -46,14 +51,18 @@ How to use this repo
     ```
 
 ## Step 2: Manual steps
+
 - Login to confluent cloud
 - Create the tableflow integration with azure using Microsoft Entra ID, where you will create entra id app, and capture this id and its going to be the value for `sp_application_id`.
 
 ## Step 3: Terraform Azure environment
+
 - Switch to `confluent-cloud` directory
     > cd confluent-cloud
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # terraform.tfvars
@@ -81,10 +90,13 @@ How to use this repo
     ```
 
 ## Step 4: Terraform Databricks environment
+
 - Switch to `databricks` directory
     > cd databricks
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # Databricks workspace (account) details
