@@ -1,11 +1,12 @@
 Terraform Confluent Cloud
 ---
 
-## Terraform Confluent Cloud
 - Switch to `confluent-cloud` directory
     > cd confluent-cloud
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # Cloud API key with resource-management permissions
@@ -31,6 +32,7 @@ Terraform Confluent Cloud
 
     `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
     `<PREFIX>` - to your desired unique letters
+
 - Finally run the terraform commands
     ```
     terraform init

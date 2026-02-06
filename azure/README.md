@@ -1,11 +1,12 @@
 Terraform Azure environment
 ---
 
-## Terraform Azure environment
 - Switch to `confluent-cloud` directory
     > cd confluent-cloud
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # terraform.tfvars
