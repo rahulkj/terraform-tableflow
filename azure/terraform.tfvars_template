@@ -7,7 +7,7 @@ databricks_workspace_name = "<PREFIX>-dbx-workspace"
 storage_account_name      = "<PREFIX>tfdbxstorageacc"
 storage_container_name    = "tableflow"
 
-sp_application_id = "4fd2e060-3ed0-406d-a649-34cbea34eb7b"
+sp_application_id = "<confluent-cloud-microsoft-entra-id>"
 
-databricks_access_connector_name   = "rj-dbx-demo-access-connector"
+databricks_access_connector_name   = "<PREFIX>-dbx-demo-access-connector"
 
