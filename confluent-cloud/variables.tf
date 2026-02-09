@@ -78,3 +78,8 @@ variable "connector_kafka_api_key_display_name" {
   type        = string
   default     = "datagen-stocks-kafka-api-key"
 }
+
+variable "azure_tenant_id" {
+  description = "Azure tenant id."
+  type        = string
+}

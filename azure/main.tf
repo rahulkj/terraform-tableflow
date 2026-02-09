@@ -150,24 +150,18 @@ resource "azurerm_role_assignment" "dac_storage_queue_data_contributor" {
 #-----------------------------------------
 # Optional outputs
 #-----------------------------------------
-output "databricks_workspace_id" {
-  value = azurerm_databricks_workspace.main.id
+output "databricks_workspace_url" {
+  value = azurerm_databricks_workspace.main.workspace_url
+  description = "The URL of the Azure Databricks Workspace"
 }
 
-output "storage_account_id" {
-  value = azurerm_storage_account.main.id
-}
-
-output "service_principal_object_id" {
-  value = azuread_service_principal.sp.object_id
+output "application_client_id" {
+  description = "The client ID/App ID of the associated application (used for authentication)."
+  value       = azuread_service_principal.sp.display_name
 }
 
 output "databricks_access_connector_id" {
   value = azurerm_databricks_access_connector.main.id
-}
-
-output "databricks_access_connector_principal_id" {
-  value = azurerm_databricks_access_connector.main.identity[0].principal_id
 }
 
 output "tenant_id" {
@@ -177,3 +171,12 @@ output "tenant_id" {
 output "abfss_storage_location" {
   value = "abfss://${var.storage_container_name}@${var.storage_account_name}.dfs.core.windows.net/"
 }
+
+output "azure_storage_account_name" {
+  value = var.storage_account_name
+}
+
+output "azure_storage_container_name" {
+  value = var.storage_container_name
+}
+

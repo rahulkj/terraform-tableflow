@@ -28,11 +28,14 @@ Terraform Confluent Cloud
 
     connector_service_account_name = "<PREFIX>-cluster-admin-sa"
     connector_kafka_api_key_display_name = "<PREFIX>-kafka-sa"
+    azure_tenant_id = ""
     ```
 
     `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
     
     `<PREFIX>` - to your desired unique letters
+
+    `azure_tenant_id` - your azure tenant id
 
 - Finally run the terraform commands
     ```

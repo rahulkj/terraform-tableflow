@@ -6,6 +6,9 @@ terraform {
       source  = "confluentinc/confluent"
       version = "~> 2.0"
     }
+    azuread = {
+      source = "hashicorp/azuread"
+    }
   }
 }
 
@@ -159,6 +162,27 @@ resource "confluent_connector" "datagen_stocks" {
   ]
 }
 
+resource "confluent_provider_integration_setup" "azure" {
+  environment {
+    id = confluent_environment.env.id
+  }
+
+  display_name = "azure-integration"
+  cloud        = "AZURE"
+}
+
+resource "confluent_provider_integration_authorization" "azure" {
+  provider_integration_id = confluent_provider_integration_setup.azure.id
+
+  environment {
+    id = confluent_environment.env.id
+  }
+
+  azure {
+    customer_azure_tenant_id = var.azure_tenant_id
+  }
+}
+
 # -----------------------------------------
 # Outputs
 # -----------------------------------------
@@ -187,4 +211,10 @@ output "connector_kafka_api_secret" {
   value       = confluent_api_key.connector_kafka.secret
   sensitive   = true
   description = "Kafka API secret used by the Datagen connector."
+}
+
+# Output the setup information
+output "azure_app_id" {
+  description = "Multi-tenant App ID for Azure setup"
+  value       = confluent_provider_integration_authorization.azure.azure[0].confluent_multi_tenant_app_id
 }

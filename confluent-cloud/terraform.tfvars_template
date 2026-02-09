@@ -17,3 +17,5 @@ region = "centralus"
 
 connector_service_account_name = "<PREFIX>-cluster-admin-sa"
 connector_kafka_api_key_display_name = "<PREFIX>-kafka-sa"
+
+azure_tenant_id = ""
