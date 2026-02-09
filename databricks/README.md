@@ -1,11 +1,12 @@
 Terraform Databricks environment
 ---
 
-## Terraform Databricks environment
 - Switch to `databricks` directory
     > cd databricks
+
 - Copy the `terraform.tfvars_template` to `terraform.tfvars`
     > cp terraform.tfvars_template terraform.tfvars
+
 - Update the values in `terraform.tfvars`
     ```
     # Databricks workspace (account) details
