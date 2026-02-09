@@ -41,7 +41,9 @@ How to use this repo
     ```
 
     `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
+
     `<PREFIX>` - to your desired unique letters
+
 
 - Finally run the terraform commands
     ```
@@ -80,6 +82,7 @@ How to use this repo
     ```
 
     `subscription_id` / `tenant_id` - your azure into
+
     `sp_application_id` - the value of Microsoft Entra ID from the confluent cloud UI
 
 - Finally run the terraform commands
@@ -118,9 +121,13 @@ How to use this repo
     ```
 
     `databricks_host` - in azure, access the Azure Databricks resource that got created in the earlier step. Capture the url from your browser - https://adb-740XXXXXX.19.azuredatabricks.net/
+
     `databricks_token` - generate a token for yourself from the databricks UI. YOUR NAME > Settings > User > Developer > Access tokens > Manage > Generate new token
+    
     `databricks_sp_application_id` - service principal app id. YOUR NAME > Settings > Workspace admin > Identity and access > Service principals > Manage > Add service principal
+    
     `external_location_abfss_url` - output from the azure terraform `abfss_storage_location`
+    
     `access_connector_id` - output from the azure terraform `databricks_access_connector_id`
 
 - Finally run the terraform commands
@@ -133,7 +140,9 @@ How to use this repo
 ## Step 5: Enable tableflow on Confluent Cloud
 - Follow the docs to complete the provider integration and connecting to the unity catalog
 - Enable tableflow on the topic and supply the details there. You would need
+  
   `storage_account_name` - output from azure terraform
+  
   `storage_container_name` - output from azure terraform
 
 ## References: 

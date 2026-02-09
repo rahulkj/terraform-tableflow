@@ -24,6 +24,7 @@ Terraform Azure environment
     ```
 
     `subscription_id` / `tenant_id` - your azure into
+    
     `sp_application_id` - the value of Microsoft Entra ID from the confluent cloud UI
 
 - Finally run the terraform commands
