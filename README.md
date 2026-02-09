@@ -93,7 +93,7 @@ How to use this repo
     ```
     terraform init
     terraform plan
-    terraform apply -auto-approve
+    terraform apply -auto-approve -var="sp_application_id=$(cd ../confluent-cloud && terraform output -raw azure_app_id)"
     ```
 
 ## Step 4: Terraform Databricks environment
