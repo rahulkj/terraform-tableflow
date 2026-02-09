@@ -42,11 +42,9 @@ How to use this repo
     azure_tenant_id = ""
     ```
 
-    `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
-
-    `<PREFIX>` - to your desired unique letters
-
-    `azure_tenant_id` - your azure tenant id
+    - `confluent_cloud_api_key` / `confluent_cloud_api_secret` > Generate these API Keys the confluent cloud, that has `Cloud resource management` as the scope
+    - `<PREFIX>` - to your desired unique letters
+    - `azure_tenant_id` - your azure tenant id
 
 
 - Finally run the terraform commands
@@ -85,9 +83,8 @@ How to use this repo
     databricks_access_connector_name   = "<PREFIX>-dbx-demo-access-connector"
     ```
 
-    `subscription_id` / `tenant_id` - your azure into
-
-    `sp_application_id` - the value of Microsoft Entra ID from the confluent cloud UI
+    - `subscription_id` / `tenant_id` - your azure into
+    - `sp_application_id` - the value of Microsoft Entra ID from the confluent cloud UI
 
 - Finally run the terraform commands
     ```
@@ -124,15 +121,11 @@ How to use this repo
     access_connector_id = 
     ```
 
-    `databricks_host` - in azure, access the Azure Databricks resource that got created in the earlier step. Capture the url from your browser - https://adb-740XXXXXX.19.azuredatabricks.net/
-
-    `databricks_token` - generate a token for yourself from the databricks UI. YOUR NAME > Settings > User > Developer > Access tokens > Manage > Generate new token
-    
-    `databricks_sp_application_id` - service principal app id. YOUR NAME > Settings > Workspace admin > Identity and access > Service principals > Manage > Add service principal
-    
-    `external_location_abfss_url` - output from the azure terraform `abfss_storage_location`
-    
-    `access_connector_id` - output from the azure terraform `databricks_access_connector_id`
+    - `databricks_host` - in azure, access the Azure Databricks resource that got created in the earlier step. Capture the url from your browser - https://adb-740XXXXXX.19.azuredatabricks.net/
+    - `databricks_token` - generate a token for yourself from the databricks UI. YOUR NAME > Settings > User > Developer > Access tokens > Manage > Generate new token
+    - `databricks_sp_application_id` - service principal app id. YOUR NAME > Settings > Workspace admin > Identity and access > Service principals > Manage > Add service principal
+    - `external_location_abfss_url` - output from the azure terraform `abfss_storage_location`
+    - `access_connector_id` - output from the azure terraform `databricks_access_connector_id`
 
 - Finally run the terraform commands
     ```
@@ -144,10 +137,18 @@ How to use this repo
 ## Step 5: Enable tableflow on Confluent Cloud
 - Follow the docs to complete the provider integration and connecting to the unity catalog
 - Enable tableflow on the topic and supply the details there. You would need
-  
-  `storage_account_name` - output from azure terraform
-  
-  `storage_container_name` - output from azure terraform
+   - `storage_account_name` - output from azure terraform - `cd azure && terraform output -raw azure_storage_account_name`
+   - `storage_container_name` - output from azure terraform - `cd azure && terraform output -raw azure_storage_container_name`
+
+## Step 6: Integrate with the unity catalog
+- Click on tableflow, and select Catalog Integration
+- Select Unity Catalog
+- Fill in the values from the azure and databricks terraform output
+    - Databricks workspace url - `cd azure && terraform output -raw databricks_workspace_url`
+    - Client ID - You generated this from your databricks service principal tab
+    - Client Secret - You generated this from your databricks service principal tab
+    - Unity catalog name - `cd databricks && terraform output -raw catalog_name`
+
 
 ## References: 
 - https://docs.confluent.io/cloud/current/topics/tableflow/how-to-guides/catalog-integration/integrate-with-unity-catalog.html
