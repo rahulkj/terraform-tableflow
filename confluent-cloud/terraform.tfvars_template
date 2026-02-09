@@ -1,0 +1,19 @@
+# Cloud API key with resource-management permissions
+confluent_cloud_api_key    = ""
+confluent_cloud_api_secret = ""
+
+# Existing environment
+environment_name = "<PREFIX>-demo-env"
+stream_governance_package = "ESSENTIALS"
+
+# Optional overrides
+kafka_cluster_name     = "azure-centralus-basic"
+topic_name             = "stocks"
+datagen_connector_name = "datagen_stocks"
+
+availability = "SINGLE_ZONE"
+cloud  = "AZURE"
+region = "centralus"
+
+connector_service_account_name = "<PREFIX>-cluster-admin-sa"
+connector_kafka_api_key_display_name = "<PREFIX>-kafka-sa"

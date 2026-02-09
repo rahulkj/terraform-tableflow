@@ -1,0 +1,13 @@
+# terraform.tfvars
+subscription_id           = ""
+tenant_id                 = ""
+resource_group_name       = "<PREFIX>-dbx-demo-rg"
+location                  = "centralus"
+databricks_workspace_name = "<PREFIX>-dbx-workspace"
+storage_account_name      = "<PREFIX>tfdbxstorageacc"
+storage_container_name    = "tableflow"
+
+sp_application_id = "4fd2e060-3ed0-406d-a649-34cbea34eb7b"
+
+databricks_access_connector_name   = "rj-dbx-demo-access-connector"
+

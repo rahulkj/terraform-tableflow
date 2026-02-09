@@ -1,0 +1,16 @@
+# Databricks workspace (account) details
+databricks_host  = 
+databricks_token = 
+
+# Service principal details
+databricks_sp_application_id = 
+
+# Catalog + storage configuration
+catalog_name                = "<PREFIX>-terraform-catalog"
+external_location_abfss_url = 
+
+storage_credential_name = "<PREFIX>-terraform-storage-cred"
+external_location_name  = "<PREFIX>-terraform-external-location"
+
+# Azure Access Connector ID (from ARM / azurerm_databricks_access_connector)
+access_connector_id = 
