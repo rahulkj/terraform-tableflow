@@ -3,7 +3,14 @@
 BASE_DIR=$(dirname "$0")
 DIR=$(readlink -f "$BASE_DIR")
 
-source "$DIR/.envrc"
+if [ -f "$DIR/.envrc" ]; then
+    echo "Loading environment variables from .envrc"
+    source "$DIR/.envrc"
+else
+    echo "Error: .envrc file not found in $DIR. Please create it with the required environment variables."
+    echo "copy the .env_template file to .envrc and update the values accordingly."
+    exit 1
+fi
 
 setup() {
     echo "Setting up Confluent Cloud infrastructure..."
